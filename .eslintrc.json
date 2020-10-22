@@ -5,11 +5,14 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:prettier/recommended"
+		"plugin:react/recommended",
+		"plugin:@next/eslint-plugin-next/recommended",
+		"plugin:prettier/recommended"
     ],
     "parser": "babel-eslint",
-    "globals": {},
+    "globals": {
+		"global": true
+	},
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -19,7 +22,9 @@
     },
     "plugins": [
         "react",
-        "prettier"
+		"prettier",
+		"react-hooks",
+		"@next/eslint-plugin-next"
     ],
     "settings": {
         "react": {
@@ -37,6 +42,8 @@
             "tabWidth": 4,
             "trailingComma": "all",
             "useTabs": true
-        }]
+		}],
+		"react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
     }
 }

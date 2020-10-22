@@ -1,31 +1,36 @@
 /* eslint-env node */
 
 module.exports = (api) => {
-	const isTest = api.env('test')
+	const isDev = api.env('development')
 
 	return {
 		presets: [
 			[
-				'@babel/preset-env',
+				'next/babel',
 				{
-					useBuiltIns: 'usage',
-					corejs: 3,
+					'preset-env': {
+						corejs: 3,
+						useBuiltIns: 'entry', //tells the preset to look for browserslist config source
+					},
 				},
 			],
-			'@babel/preset-react',
 		],
 		plugins: [
 			[
 				'babel-plugin-styled-components',
-				{ ssr: !isTest, displayName: !isTest },
+				{
+					ssr: true,
+					displayName: isDev,
+					preprocess: false,
+				},
 			],
-			['module-resolver', { root: ['./assets', './src'] }],
+			['babel-plugin-module-resolver', { root: ['./src'] }],
 		],
 		env: {
 			production: {
 				plugins: [
 					[
-						'react-remove-properties',
+						'babel-plugin-react-remove-properties',
 						{
 							properties: ['data-testid'],
 						},
