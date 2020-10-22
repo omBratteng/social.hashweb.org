@@ -17,7 +17,7 @@ const devLinks = [
 
 const prodLinks = [
 	{
-		href: 'https://cdn.bratteng.sh',
+		href: 'https://socialhashweb.b-cdn.net',
 	},
 	{
 		href: googleFonts('Fira+Code:wght@400;600'),
