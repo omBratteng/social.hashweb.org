@@ -1,9 +1,5 @@
-import React from 'react'
 import styled from 'styled-components'
 import media from 'css-in-js-media'
-
-import Header from 'components/layout/Header'
-import Avatar from 'components/layout/Avatar'
 
 const Main = styled.main`
 	display: grid;
@@ -24,19 +20,4 @@ const Main = styled.main`
 	}
 `
 
-import people from 'people.json'
-
-const App = () => {
-	return (
-		<>
-			<Header title="#web-social Hall of (f/sh)ame & majestic beards" />
-			<Main>
-				{people.map((person, key) => {
-					return <Avatar key={key} {...person} />
-				})}
-			</Main>
-		</>
-	)
-}
-
-export default App
+export default Main

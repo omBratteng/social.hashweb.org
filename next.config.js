@@ -7,18 +7,7 @@ const isProd =
 module.exports = {
 	reactStrictMode: false,
 	poweredByHeader: false,
-	assetPrefix: isProd ? 'https://cdn.bratteng.sh' : '',
-	webpack(config) {
-		config.module.rules.push({
-			test: /\.svg$/,
-			issuer: {
-				test: /\.(js|ts)x?$/,
-			},
-			use: ['@svgr/webpack'],
-		})
-
-		return config
-	},
+	assetPrefix: isProd ? 'https://socialhashweb.b-cdn.net' : '',
 	// Customize the client side manifest.
 	assetsManifestClient: {
 		output: `${process.cwd()}/public/asset-manifest.json`,
