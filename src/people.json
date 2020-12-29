@@ -114,8 +114,8 @@
     {
         "name": "skalnik",
         "description": "Howdy",
-        "website": false,
-		"crown": false,
+        "website": "https://skalnik.com",
+        "crown": false,
         "image": "skalnik.jpg"
     },
     {
